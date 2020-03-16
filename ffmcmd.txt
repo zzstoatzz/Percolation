@@ -1,0 +1,3 @@
+ffmpeg -i imgs/img%d.png -vf palettegen palette.png
+
+ffmpeg -v warning -i imgs/img%d.png -i palette.png -lavfi "paletteuse, setpts=6*PTS" -y vids/test.gif
